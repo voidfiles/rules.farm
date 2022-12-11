@@ -1,7 +1,9 @@
 site:
 	pipenv run python makesite.py
 
-vercel: site
+vercel:
+	mv prod_params.json params.json
+	make site
 	rm -fR .vercel
 	mkdir -p .vercel/output/static
 	mv _site/config.json .vercel/output/

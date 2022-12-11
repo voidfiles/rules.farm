@@ -139,7 +139,7 @@ def make_pages(src, dst, layout, **params):
         log('Rendering {} => {} ...', src_path, dst_path)
         fwrite(dst_path, output)
 
-    return filter(lambda x: x.get('draft') is False, sorted(items, key=lambda x: x['date'], reverse=True))
+    return filter(lambda x: not x.get('draft'), sorted(items, key=lambda x: x['date'], reverse=True))
 
 
 def make_list(posts, dst, list_layout, item_layout, **params):
