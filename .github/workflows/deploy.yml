@@ -65,7 +65,7 @@ jobs:
         vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}  #Required
         vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} #Required
         github-comment: false
-        #vercel-args: '--prod' #Optional
+        vercel-args: '--prebuilt' #Optional
         working-directory: ./_site
 
     - name: Update Deployment Status
