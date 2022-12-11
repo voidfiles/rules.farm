@@ -36,7 +36,7 @@ jobs:
         command: install -d # Install all dependencies, including development ones
     # your build commands
     - run: |
-      make site
+        make site
     # Step 4 - Push our generated site to vercel
     - name: Deploy to Vercel
       uses: amondnet/vercel-action@v20
