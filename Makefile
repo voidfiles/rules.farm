@@ -3,8 +3,8 @@ site:
 
 vercel: site
 	rm -fR .vercel
-	mkdir -p .vercel/output
-	cp -fR _site/* .vercel/output 
+	mkdir -p .vercel/output/static
+	cp -fR _site/* .vercel/output/static 
 
 watch:
 	pipenv run honcho start
