@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }} - {{ subtitle }}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <style>{{ css }}</style>
+    </head>
+
+    <body id="{{ slug }}">
+
+        <nav>
+            <section>
+                <h1 class="home">
+                    <a href="{{ base_path }}/">Rules: Farm</a>
+                </h1>
+                <!-- <span class="links">
+                    <a href="{{ base_path }}/blog/">Blog</a>
+                    <a href="{{ base_path }}/news/">News</a>
+                    <a href="{{ base_path }}/contact/">Contact</a>
+                    <a href="{{ base_path }}/about/">About</a>
+                </span> -->
+            </section>
+        </nav>
+
+        <main>
+            {{ content }}
+        </main>
+
+        <footer>
+            <section>
+                <p>What is Rules: Farm? This site collects notable, interesting, or fun examples of hard one knowledge boiled down to a list of rules.</p>
+                <p>&copy; {{ current_year }} Rules: Farm</p>
+            </section>
+        </footer>
+
+    </body>
+</html>

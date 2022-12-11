@@ -1,0 +1,15 @@
+<article>
+    <h1>
+        <a href="{{ base_path }}/{{ blog }}/{{ slug }}/">{{ title }}</a>
+    </h1>
+    <p class="meta">
+        <a href="{{ source }}" title="source">[source]</a> {{ date }} collected by <b>{{ author }}</b>
+    </p>
+    {{ content }}
+    <hr>
+    <div>
+        <img src="{{ image }}" align="left" style="max-width:33%; margin-right: 1em; margin-bottom: 1em; border: 1px solid #ccc;"></img>
+        <p>{{ author_name }} </p>
+        {{ author_description }}
+    </div>
+</article>
