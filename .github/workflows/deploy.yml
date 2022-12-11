@@ -20,6 +20,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - name: Start Deployment
+      if: ${{ !github.event.act }} # skip during local actions testing
       uses: bobheadxi/deployments@v0.4.3
       id: deployment
       with:
@@ -69,10 +70,15 @@ jobs:
 
     - name: Update Deployment Status
       uses: bobheadxi/deployments@v0.4.3
-      if: always()
+      if: ${{ !github.event.act }} # skip during local actions testing
       with:
         step: finish
         token: ${{ secrets.GITHUB_TOKEN }}
         status: ${{ job.status }}
         deployment_id: ${{ steps.deployment.outputs.deployment_id }}
         env_url: ${{ steps.vercel-action.outputs.preview-url }}
+
+    - name: Expose Preview URL
+      if: ${{ github.event.act }} # skip during local actions testing
+      run: |
+        echo '${{ steps.vercel-action.outputs.preview-url }}'

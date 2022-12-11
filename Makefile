@@ -29,4 +29,14 @@ clean:
 	find . -name "*.pyc" -exec rm {} +
 	rm -rf .coverage htmlcov
 
+act:
+	op run --env-file=".env" -- \
+		act \
+			-s VERCEL_ORG_ID \
+			-s VERCEL_PROJECT_ID \
+			-s VERCEL_TOKEN \
+			-s GITHUB_TOKEN \
+			-e event.json \
+			--container-architecture linux/amd64 \
+			pull_request
 FORCE:
