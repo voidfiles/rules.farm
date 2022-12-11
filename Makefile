@@ -1,6 +1,11 @@
 site:
 	pipenv run python makesite.py
 
+vercel: site
+	rm -fR .vercel
+	mkdir -p .vercel/output
+	cp -fR _site/* .vercel/output 
+
 watch:
 	pipenv run honcho start
 
